@@ -1,0 +1,26 @@
+
+  <script defer>
+//name: augustnoa
+const buttons = document.querySelectorAll(".swatch input");
+ //var selectors = document.querySelectorAll(".single-option-selector");
+for (const button of buttons) {
+  button.addEventListener('click', function(event) {
+    var optionIndex = this.closest('.swatch').getAttribute("data-option-index");
+     //console.log(optionIndex);
+    var optionValue = this.value;
+    //console.log(optionValue);
+    
+    var selectors = document.getElementsByClassName("single-option-selector");
+    //console.log( selectors[optionIndex])
+
+    // selectors = document.querySelectorAll(".single-option-selector");
+
+    selectors[optionIndex].value = optionValue;
+    selectors[optionIndex].dispatchEvent(new Event('change'));
+
+
+
+  })
+}
+
+</script>
